@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css-->
+    <link rel="stylesheet" href="/css/zodiac-styles.css">
+    <!-- JS modules/scripts-->
+</head>
+<body>
+    <!-- first container for responsive spacing-->
+    <main class="main-container">
+
+        <!-- Section A - Title of Calc should stay consistent-->
+        <section class="ras-zodiac-title-a">
+            <div class="title-style">
+                <h1>rasa<span id="title-spacing">u<span class="ras-title-char">&#9790;</span>Q</span><h1>
+                <h2>Zodiac Calculator</h2>
+            </div>
+        </section>
+
+        <!-- Section b - User input/system response-->
+        <section class="zodiac-b">
+                <div class="about-calc vanisher">
+                    <h3>Welcome to Space Friend!</h3>
+                    <p>What character are you in the Rasauq universe? Enter your birthday to find out.</p>
+                </div>
+                <!-- form to input birthday-->
+                <div class="z-user-input">
+                    <div class="container-i">
+                        <form action="" class=" user-input">
+                            <input type="text" placeholder="Name" id="users-name" class="user-inputs vanisher">
+                            <input type="date" placeholder="Date"class="user-inputs">
+                            <button class="zodiac-btn">Show me</button> <!-- UPDATE, add VAR-->
+                        </form>
+                    <!-- the help link-->
+                    <a href="#"> Help</a>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Section c - All Zodiac Characters-->
+        <section class="zodiac-character-sheet-c">
+            <div class="container-ii">
+                <div class="all-characters-c1">
+                    <h4> All Characters</h4>
+                    <div class="mobile-switch-seasons vanisher"></div>
+                </div>
+            <!-- zodiacs broken into 3 rows, may button to seperately interact with rows for mobile view-->
+                <div class="char-row1 char-rows">
+                    <div class="character-icon aries">aries</div>
+                    <div class="character-icon taurus">taurus</div>
+                    <div class="character-icon gemini">gemini</div>
+                    <div class="character-icon cancer">cancer</div>
+                </div>
+                <div class="char-row2 char-rows">
+                    <div class="character-icon leo">leo</div>
+                    <div class="character-icon virgo">virgo</div>
+                    <div class="character-icon libra">libra</div>
+                    <div class="character-icon scorpio">scorpio</div>
+                </div>
+                <div class="char-row3  char-rows">
+                    <div class="character-icon sagittarius">sagittarius</div>
+                    <div class="character-icon capricorn">capricorn</div>
+                    <div class="character-icon aquarius">aquarius</div>
+                    <div class="character-icon pisces">pisces</div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
