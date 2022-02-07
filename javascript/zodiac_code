@@ -1,0 +1,89 @@
+// Find the users zodiac based on their birth date 
+
+// button fun 
+
+const btnExample = document.querySelectorAll('characters');
+
+//This is major !!! research this what it's listening for, then tell it to do soemthing 
+
+
+function activeButton() {
+    console.log('active Button');
+}
+btnExample.addEventListener('click', function() {
+    activeButton();
+});
+
+
+
+
+
+
+// take in the users birthddate 
+
+
+// function to determine birthdate by zodiac
+
+
+// objects for template 
+
+
+//things to include 
+
+// 1. ZODIAC NAME TEXT 
+
+// 2. ZODIAC IMAGES *
+
+//3. ZODIAC Character Name 
+//4. Character Description  (Grouped)
+
+//5. Character 
+
+//
+
+
+// Wanted strucutre 
+/* __init__ 
+
+const zodiacTemplate
+this.zodiacNum = zodiacNum (0 = Capricorn, -> 11 for last one )
+
+function getZodiacName(this) {
+    0-11
+}
+
+function getZodiacImage(this) {
+    0-11
+}
+
+function setRasCharacterName () {
+    if .... = 
+
+
+}
+function getZodiacDescription (this){
+
+    zodiacDescription = [rasCharacterName, rasCharacterDescription, rasCharacterThemeMusic]
+    return zodiacDescription
+}
+
+*/
+
+/* replace to html 
+1. Aries March-etc 
+2. Aries Image 
+3. Aries Character Name 
+4. Aries Description
+5. Aries Music Credit (use html? because of )
+6. Aries actual Music 
+
+
+// have buttons reference function... 
+
+// final project no wider than 1280px... set html max width to 1280px. or 960px etc 
+
+
+/* we have to make the optional zodiacs img buttons for user to select all of them instead of inputting 
+
+
+*/

@@ -5,53 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rasauq zodiac</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <!-- css-->
     <link rel="stylesheet" href="/css/zodiac-styles.css">
     <!-- JS modules/scripts-->
 </head>
 <body>
-    <!-- SECTION A title card-->
-<header class="zodiac-title">
-    <h2>Zodiac Calculator</h2>
-    <h1>rasauq</h1>
-</header>
-    <!-- SECTION B user input & Zodiac-->
-    <section class="zodiac-scroll">
-        <!-- Conceal when form is activiated-->
-        <div class="intro-card"><p>What character are you in the rasauq universe? Enter your birthday to find out.</p></div>
-        <!-- Reveal when form is activated-->
-        <div class="chosen-zodiac">
-            <div class="zodiac-icon">&#9800;</div>
-            <div class="chosen-zodiac-text">
-                <h2 class="zodiac-name">Aries</h2>
-                <h3 class="zodiac-date">March 20 - April 19</h3>
+    <!-- HEADER - Calculator title card-->
+    <header class="calculator-header">
+        <div class="header-wrapper">
+            <h2 id="z-calculator-title">Zodiac Calculator</h2>
+            <h1 id="rasauq">rasauq</h1>
+        </div>
+    </header>
+    <!-- MAIN - user Input & Zodiac Output, Buttons-->
+    <main>
+        <!-- SECTION A - Zodiac User Input & Output-->
+        <section class="section-a">
+            <!-- Intro Text, TO DO REMOVE AFTER BUTTON TRIGGER -->
+            <!-- TEMP COMMENT <div>What character are you in the rasauq universe? Enter your birthday to find out.</div> -->
+
+            <!-- TEMP for JS --->
+            <img class="zodiac-image"src="/images/1.png" alt="">
+            <!-- ZODIAC NAME-->
+            <!-- Group Text Content-->
+            <section class="section-c">
+                <!-- add in zodiac-class-->
+                <div class=wrapper-01>
+                    <div class="zodiac">
+                        <div class="zodiac-sign">&#9800;</div>
+                        <h3 class="zodiac-name">Aries</h3>
+                        <h4 class="zodiac-date">March 20 - April 19</h4>
+                    </div> 
+                </div>
+                <!-- CHARACTER DESCRIPTION-->
+                <div class="wrapper-02">
+                    <div class="character-description">
+                        <!-- hide/make appear class name zodiac in js -->
+                        <h5 class="character-intro">As <span class="exact-character">Selene</span></h5>
+                        <p class="about-character">Aries are known for their confidence and leadership and Selene is no different. She is one of seven primary celestial beings, notorious for her willingness to go to war to resolve disputes. Although stubborn, she is open to innovative solutions. Her savage spirit is best seen through her descendants, the Messor clan. </p>
+                        <p class="char-music">Music - <span class=exact-song-title> <a>“Seizing”</a> (prod. Systematik)</span></p>
+                    </div> 
+                </div>
+    
+                <!-- Group Input into one section -->
+                <div class="wrapper-03">
+                    <div class="user-interaction">
+                        <form action="" method="post">
+                            <input type="date" class="birth-date">
+                        </form>
+                    <button class="z-button">Show me</button>
+                    <p class="u-pop-up">Help</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <!-- SECTION B - Zodiac All Character Buttons-->
+        <section class="section-b">
+            <h2 class=all-characters>All Characters</h2>
+            <div>
+                <button class="characters"><img src="/images/1.png" alt="">Aries</button>
+                <button class="characters"><img src="/images/1.png" alt="">Taurus</button>
+                <button class="characters"><img src="/images/1.png" alt="">Gemini</button>
+                <button class="characters"><img src="/images/1.png" alt="">Cancer</button>
+                <button class="characters"><img src="/images/1.png" alt="">Leo</button>
+                <button class="characters"><img src="/images/1.png" alt="">Virgo</button>
+                <button class="characters"><img src="/images/1.png" alt="">Libra</button>
+                <button class="characters"><img src="/images/1.png" alt="">Scorpio</button>
+                <button class="characters"><img src="/images/1.png" alt="">Sagittarius</button>
+                <button class="characters"><img src="/images/1.png" alt="">Capicorn</button>
+                <button class="characters"><img src="/images/1.png" alt="">Aquarius</button>
+                <button class="characters"><img src="/images/1.png" alt="">Pisces</button>
             </div>
-        </div>
-        
-        <div class="zodiac-input">
-            <form action="" class="zodiac-form">
-                <input type="date" class="birthdate">
-                <input type="submit" class="btn" value="Show me">
-            </form>
-        </div>
-        
-    </section>
-<section class="all-characters">
-    <div class="characters"><img src="/images/1.png" alt=""></div>
-    <div class="characters"><img src="/images/1.png" alt=""></div>
-    <div class="characters"><img src="/images/1.png" alt=""></div>
-    <div class="characters"><img src="/images/1.png" alt=""></div>
-    <div class="characters"><img src="/images/1.png" alt=""></div>
-    <div class="characters"><img src="/images/1.png" alt=""></div>
-    <div class="characters"><img src="/images/1.png" alt=""></div>
-    <div class="characters"><img src="/images/1.png" alt=""></div>
-    <div class="characters"><img src="/images/1.png" alt=""></div>
-    <div class="characters"><img src="/images/1.png" alt=""></div>
-    <div class="characters"><img src="/images/1.png" alt=""></div>
-    <div class="characters"><img src="/images/1.png" alt=""></div>
-</section>
+        </section>
+    </main>
+<script src="javascript/zodiac_code"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 /*
 Developer: Alexis Tibbs 
 Drexel User: ajt347
@@ -24,24 +25,168 @@ Rasauq Zodiac Calculator
 }
 
 html {
-    background: var(--the-abyss);
+    background: var(--spaced-out);
     color: var(--star-light);
 }
 
 /*fonts*/
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5 {
     font-family: var(--primary-font);
 }
 
-p {
+p, .zodiac-date {
     font-family: var(--secondary-font);
+}
+p {
+    font-size:15px;
+    line-height: 30px;
+    font-weight: 400;
+    color: #C5C4C8;
 }
 
 
-/*SECTION A*/
+/* remove styles prior to zodiac activitation */ 
 
-/*SECTION C*/
+/* HEADER */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 359px;
+}
+
+.header-wrapper {
+    text-align: center;
+}
+h1, h2 {
+    text-transform: uppercase;
+}
+#z-calculator-title, .zodiac-name, .zodiac-date, .char-music h5 {
+    font-weight: 300;
+}
+
+#z-calculator-title {
+    font-size: 24px;
+    line-height: 10px;
+    letter-spacing: 0.22em;
+}
+
+#rasauq {
+    font-size: 60px;
+    letter-spacing: -0.09em;
+    font-weight: 400;
+    line-height:75px;
+}
+
+/*SECTION A*/
+.section-a {
+    border: 1px solid var(--star-light);
+    border-radius: 10px;
+    max-width: 1168px;
+    margin: 0 auto;
+    display: flex;
+}
+
+/* displayed content when executed */
+.section-c {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.zodiac-image {
+    width: 584px;
+    height: auto;
+}
+
+/* add in when activated*/
+.zodiac {
+    position: relative;
+    bottom: 20px;
+    height: 160px;
+    text-align: center;
+}
+
+.zodiac-sign {
+    position: relative;
+    bottom: 34px;
+}
+
+.zodiac-name {
+    font-size: 36px;
+    letter-spacing: 0.3em;
+}
+
+.zodiac-date {
+    line-height:15.6px;
+    letter-spacing: 3.88px;
+}
+
+/* CHARACTER DESCRIPTION*/
+
+.character-description {
+    max-width: 448px;
+}
+
+.character-intro {
+    padding-bottom: 22px;
+
+}
+.exact-character {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size:30px;
+    letter-spacing:4.4px;
+    padding-left: 20px;
+}
+
+/* music */
+
+.char-music {
+    font-size: 11px;
+    margin-top: 55px;
+}
+
+a { 
+    color: var(--pink-quasar-cta);
+}
+
+
+/* USER INPUTS / INTERACTION */
+
+.user-interaction {
+    width: 245.7px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.birth-date {
+    margin: 10px 0;
+    height: 33px;
+    width: 245.7px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    padding-left: 12px;
+}
+
+.z-button {
+    width: 117.5px;
+    height: 31.93px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    color: var(--star-light);
+    background: var(--twilight-fire);
+    border:none;
+    font-family: var(--secondary-font);
+    line-height: 19.2px;
+}
+
+
+/*SECTION B*/
 .all-characters {
     border: 1px solid;
     display: flex;
@@ -58,3 +203,4 @@ p {
     height: auto;
     margin: 1rem;
 }
+
