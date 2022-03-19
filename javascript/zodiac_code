@@ -1,89 +1,366 @@
-// Find the users zodiac based on their birth date 
+//INITIAL STATES no appearance prior to styling 
+// zodiac img
+const zodiacImg = document.getElementsByClassName('zodiac-image')[0]
+// Zodiac Header 
+const zodiacHeader = document.getElementsByClassName('zodiac')[0]
+// Character Description 
+const characterDescription = document.getElementsByClassName('character-description')[0]
+//All above pieces 
+const zodiacPresentation = [zodiacImg, zodiacHeader, characterDescription];
 
-// button fun 
 
-const btnExample = document.querySelectorAll('characters');
-
-//This is major !!! research this what it's listening for, then tell it to do soemthing 
-
-
-function activeButton() {
-    console.log('active Button');
+// FUNCTIONS AND METHODS 
+function displayElement(z=false) {
+    if (z == true) {
+        for (let i=0; i < zodiacPresentation.length; i++) {
+            zodiacPresentation[i].style.display = 'inherit';
+        }
+        const zIntro = document.getElementsByClassName('remove-init')[0];
+        zIntro.style.display = 'none';
+        const dateBtn = document.getElementsByClassName('z-button')[0].innerHTML = 'Another';
+    } else if (z == false) {
+        for (let i=0; i < zodiacPresentation.length; i++) {
+            zodiacPresentation[i].style.display = 'none';
+        } 
+    }
 }
-btnExample.addEventListener('click', function() {
-    activeButton();
-});
+displayElement()
+
+class zodiacTemplate {
+    constructor(zodiac, zDate, charName, charText, musicDescript, image, charAudio, charSong, zIcon) {
+        this.zodiac = zodiac;
+        this.zDate = zDate;
+        this.charName = charName;
+        this.charText = charText;
+        this.musicDescript = musicDescript;
+
+        //media 
+        this.image = `/images/${image}.png`;
+        this.charAudio = charAudio;
+        this.charSong = charSong;
+
+        this.zIcon = `/images/${zIcon}i.png`;
+
+        // Zodiac content
+        this.changeContent = function () {
+            //header content 
+            const changeZodiacName = document.getElementsByClassName('zodiac-name')[0];
+            changeZodiacName.innerHTML = this.zodiac;
+            const changeZodiacDate = document.getElementsByClassName('zodiac-date')[0];
+            changeZodiacDate.innerHTML = this.zDate;
+            
+            const changeZodiacIcon = document.getElementById('changing-z-sign');
+            changeZodiacIcon.src = this.zIcon;
+            //body description 
+            const changeZodiacChar = document.getElementsByClassName('exact-character')[0];
+            changeZodiacChar.innerHTML = this.charName;
+            const changeZodiacDes = document.getElementsByClassName('about-character')[0];
+            changeZodiacDes.innerHTML = this.charText;
+            //Images
+            const changeZodiacImg = document.getElementsByClassName('zodiac-image')[0];
+            changeZodiacImg.src = this.image;
+
+            //Music
+            const dj = document.getElementById('dj');
+            dj.src = `audio/${charAudio}.mp3`;
+            dj.play();
+            const changeZodiacSong = document.getElementById('exact-song-title');
+            changeZodiacSong.innerHTML = this.charSong;
 
 
 
 
+        };
 
-
-// take in the users birthddate 
-
-
-// function to determine birthdate by zodiac
-
-
-// objects for template 
-
-
-//things to include 
-
-// 1. ZODIAC NAME TEXT 
-
-// 2. ZODIAC IMAGES *
-
-//3. ZODIAC Character Name 
-//4. Character Description  (Grouped)
-
-//5. Character 
-
-//
-
-
-// Wanted strucutre 
-/* __init__ 
-
-const zodiacTemplate
-this.zodiacNum = zodiacNum (0 = Capricorn, -> 11 for last one )
-
-function getZodiacName(this) {
-    0-11
+    }
 }
 
-function getZodiacImage(this) {
-    0-11
-}
+// Zodiac Obj references 
+const Aries = new zodiacTemplate(
+    'Aries',
+    'March 21 - April 19',
+    'Selene',
+    'Did you see this at the museum near the school? Selene is a celestial being from ancient lore notorious for her savage spirit. She is the mother of the Messor people, an ancient race depicted with physical prowess exponentially greater than today’s average person. Legend says that these were one of the original people, and also guardians over the land who conquered everything upon it with their superior strength. Land under their protection was known to be extremely fruitful and pure as they were not only warriors, but quite skilled laborers.<br><br>They rose to establish a glorious empire that stretched across more than half of the earth. Their only competition was the Solarius people, another ancient race known to have fire of the sun flowing through them. After a great golden age their empire collapsed due to infighting, and the remains of their people were scattered.',
+    'music description',
+    'ariesSK',
+    'aries', 
+    '<a href="https://www.youtube.com/watch?v=OxKx76vpTEw"> "HOT" (Prod. ZannScott)</a>',
+    'aries'
+);
 
-function setRasCharacterName () {
-    if .... = 
+const Taurus = new zodiacTemplate(
+    'Taurus',
+    'April 20 - May 20',
+    'Bellona',
+    '<i>You found a student ID</i><br><br>Bellona is an interesting character to see around campus. She’s an elite athlete, and all the elites get full rides. Have you seen any of her volleyball games? If not she’s the only one people come to see. Watching her play is like watching a tiger play with its food. She’s vicious on the court and merciless with her spikes. With an undefeated record there’s nothing stopping her from going pro. She’s also surprisingly a physics major.<br><br>She comes from a wealthy and politically powerful family. I don\'t know much else about her, but I wouldn\'t ask if I were you. Her aura is terrifying on and off the court. ',
+    'music description',
+    'taurusSK',
+    'bella',
+    '<a href="https://www.youtube.com/watch?v=yOEqBMErBiI"> "Baller" (Prod. ZannScott)</a>',
+    'taurus'
+);
+
+const Gemini = new zodiacTemplate(
+    'Gemini',
+    'May 21 - June 20',
+    'Alek and Sasha',
+    '<i>You found a student ID</i><br><br>Hey, they\’re actually twins. Alek and Sasha aren\’t the inseparable kind of brothers and are quite opposite in personality. Alek is the lead with little tolerance for nonsense. He says he\’s not here to make friends, but I think he\’s developed a soft spot for the other boys in the dorm. I think he wants to go to law school too. Sasha on the other hand seems very shy, I don\’t see him out a lot. What I do know is that he hasn\’t decided on a major yet. When the two come together Sasha is spoken for by Alek and their combined persona snaps together in a stoic way. Luckily it\’s not too hard to tell them apart. Alek likes to wear a red scarf while the other wears a blue one. I\’ve also noticed another boy likes to accompany them. I\’m not sure if he\’s related, but he doesn\’t seem like a friend, more like a retainer.',
+    'music description',
+    'geminiSK',
+    'twins',
+    '<a href="https://www.youtube.com/watch?v=IfYLBGoqN6w">"FLYING HIGH" (Prod. ZannScott)</a>',
+    'gemini'
+);
+
+const Cancer = new zodiacTemplate(
+    'Cancer',
+    'June 21 - July 22',
+    'Shells',
+    'If you see these in the water, DON\’T TOUCH THEM! Public safety won\’t do anything to remove them. The school says they\’re a foreign species of crawfish. I don\’t buy it, but do be careful. I heard some unlucky students were hospitalized from some type of poison. I think it\’s from this black liquid that oozes out of the shells. I see more of them wash onto shore every week, I even saw a couple of them squirm unnaturally, so I\’ve decided to start studying them. Something strange is happening that people refuse to talk about.',
+    'music description',
+    'cancerSK',
+    'shells',
+    '<a href="https://www.youtube.com/watch?v=9CSUekBbi5M">"NO CONTROL" (Prod. ZannScott)</a>',
+    'cancer'
+);
+
+const Leo = new zodiacTemplate(
+    'Leo',
+    'July 23 – August 22',
+    'Leonardo',
+    '<i>You found a student ID</i><br><br>Yes, that is his name. You know that big energy company that powers practically everything? Well he\’s next in line to run it. He\’s definitely a big shot around campus. A lot of students and entrepreneurs flock to him with their ideas for a business opportunity. Who can blame them? His support is life changing, hence his nickname <i>The Red Angel</i>. I sense that he is trying to prove himself to be a worthy successor. It\’s not up to me to decide but he has run a couple of very successful businesses.<br><br> I\’m not sure why he\’s even a student. Maybe it\’s to watch the girl\’s volleyball games because that\’s where I usually see him.',
+    'music description',
+    'leoSK',
+    'leo',
+    '<a href="https://www.youtube.com/watch?v=897akfXWPGc">"City Lights" (Prod. ZannScott)</a>',
+    'leo'
+);
+
+const Virgo = new zodiacTemplate(
+    'Virgo',
+    'August 23 – September 22',
+    'Quinlan',
+    '<i>You found a student ID</i><br><br>Quinlan is hands down the craziest girl I have met in our dorm. I can\’t remember a weekend where she didn’t party. She even parties on weekdays. Geez… I\’m not sure how she keeps up with that lifestyle. I guess it has it\’s perks because she has a lot of connections around campus. Whatever you need, she has the hook up. <br><br> In highschool she had to be one of the popular girls. Luckily she doesn\’t seem like a mean girl. All her interactions appear friendly and bubbly. Call me crazy but after seeing her dorm room, I think she\’s a witch. ',
+    'music description',
+    'virgoSK',
+    'quinlan',
+    '<a href="https://www.youtube.com/watch?v=8oRopVGAVZY">"Eagle" (Prod. ZannScott)</a>',
+    'virgo'
+);
+
+const Libra = new zodiacTemplate(
+    'Libra',
+    'September 23 – October 22',
+    'Kastro',
+    '<i>You found a student ID</i><br><br>Woah! That\’s my Biology TA! When I see him, he\’s always lenient with grading and helps a lot of students after class. According to other students, he\’s been a TA in the science department since his freshman year and assists in multiple classes at once. I\’m not sure how he has time to manage so many classes along with his personal schedule. The guy must be really smart or have nothing better to do with his time. Maybe he\’s an aspiring professor because it\’s hard to tell him apart from the teachers. He glides through restricted areas like it\’s nothing, and sometimes I see him go in with his research groups. I wonder what his mission is. ',
+    'music description',
+    'libraSK',
+    'kastros', 
+    '<a href="https://www.youtube.com/watch?v=gLLcHWzMnT0"> "Diamond Ring" (Prod. ZannScott)</a>',
+    'libra'
+);
+
+const Scorpio = new zodiacTemplate(
+    'Scorpio',
+    'October 23 – November 21',
+    'Zuzanna',
+    '<i>You found a student ID</i><br><br>I have to remember that most of the people in our dorm are just not normal. But, I also have to remember that is why Campus has the reputation it does. Zuzanna is an oddball, a bookworm, and a jittery ball of nerves. She get\’s really fussy about people touching her hair. But I don\’t think she can complain if she allows her hair to carelessly whip around in that long braid of hers. It gets really annoying after a while. What I do find interesting however, is that she says her family is one of the last truly natural beekeepers. I do believe her because the honey she let us try was <i>superb</i>. I guess she wants to soak up as much knowledge as she can to protect her family\’s legacy. ',
+    'music description',
+    'scorpioSK',
+    'zuz', 
+    '<a href="https://www.youtube.com/watch?v=EtVfcKY48iQ">"After Party" (Prod. ZannScott)</a>',
+    'scorpio'
+
+);
+
+const Sagittarius = new zodiacTemplate(
+    'Sagittarius',
+    'November 22 – December 21',
+    'Alex',
+    '<i>You found a student ID</i><br><br>Alex is a fiery little thing. Every time I see him, he\’s covered in some type of dirt or grime. It doesn\’t make sense to me because he is an archer, not a football player. I guess he takes his training in the woods that seriously. Either that or he keeps getting into fights. He\’s one of the few prestigious athletes we have in our dorm, which is really awesome. I can\’t wait to see him perform. ',
+    'music description',
+    'sagSK',
+    'sag',
+    '<a href="https://www.youtube.com/watch?v=HeFPXVYkPVk">"Dsytopia" (prod. WaveyyBeats x kingfisherbeats)</a>',
+    'sag'
+);
+
+const Capricorn = new zodiacTemplate(
+    'Capricorn',
+    'December 22 – January 19',
+    'Crystal',
+    '<i>You found a student ID</i><br><br>Crystal lives in the dorm building next door. We are in the same English class too. Whenever I speak to her she is always kind. She reminds me of one of those studious good girls in highschool, the neat and clean ones with the cute pencil case and gum to share with the class. She has shared with me that she\’s thinking of joining a sorority. I\’m not sure if she understands the commitment she would be making just yet. I honestly wish her the best. ',
+    'music description',
+    'capSK',
+    'crystal',
+    '<a href="https://www.youtube.com/watch?v=H2Uuom-EZ0Q"> "Illusion" (Prod. ZannScott)</a>',
+    'capricorn'
+);
+
+const Aquarius = new zodiacTemplate(
+    'Aquarius',
+    'January 20 – February 18',
+    'Vell',
+    'Pretty cool right? Vell is an ancient lore figure and a water celestial. It is said that everything from the sea comes from her, and the land was water by her essence, giving life to the plants and nourishing all creatures. In lore the waterfall is used to symbolize her powers of renewal and cleansing. If you\’re ever near one you can make a wish. I\’m not sure if the wish thing is true, but I love the exhibit they have on her at the museum. ',
+    'music description',
+    'aquariusSK',
+    'vell',
+    '<a href="https://www.youtube.com/watch?v=oDggaHPoOp4">"Wake Me" (prod. WaveyyBeats x tokeyo)</a>',
+    'aquarius'
+);
+
+const Pisces = new zodiacTemplate(
+    'Pisces',
+    'February 19 – March 20',
+    'Ascending Beast',
+    'No one would believe you if you said you saw this. But, I do. This thing looks familiar to me. I think it\’s a beastal spirit which are flying dragon-like creatures from ancient lore. However this is not the form they usually take. I think that black thing in the middle is a parasite. I have to continue my studies on the strange things that have been happening as of late. I\’ll see what I can find and get back to you. ',
+    'music description',
+    '1',
+    'beast',
+    '<a href="https://www.youtube.com/watch?v=UhpFJI2p_js"> "LATE NIGHT" (Prod. ZannScott)</a>',
+    'pisces'
+);
 
 
-}
-function getZodiacDescription (this){
+//BUTTON SECTION 
+const aries_btn = document.getElementById('aries');
+const taurus_btn = document.getElementById('taurus');
+const gemini_btn = document.getElementById('gemini');
+const cancer_btn = document.getElementById('cancer');
 
-    zodiacDescription = [rasCharacterName, rasCharacterDescription, rasCharacterThemeMusic]
-    return zodiacDescription
-}
+const leo_btn = document.getElementById('leo');
+const virgo_btn = document.getElementById('virgo');
+const libra_btn = document.getElementById('libra');
+const scorpio_btn = document.getElementById('scorpio');
 
-*/
-
-/* replace to html 
-1. Aries March-etc 
-2. Aries Image 
-3. Aries Character Name 
-4. Aries Description
-5. Aries Music Credit (use html? because of )
-6. Aries actual Music 
-
-
-// have buttons reference function... 
-
-// final project no wider than 1280px... set html max width to 1280px. or 960px etc 
+const sagittarius_btn = document.getElementById('sagittarius');
+const capicorn_btn = document.getElementById('capicorn');
+const aquarius_btn = document.getElementById('aquarius');
+const pisces_btn = document.getElementById('pisces');
 
 
-/* we have to make the optional zodiacs img buttons for user to select all of them instead of inputting 
 
 
-*/
+aries_btn.addEventListener('click', () => {
+    Aries.changeContent();
+    displayElement(true);
+}, false);
+
+taurus_btn.addEventListener('click', () => {
+    Taurus.changeContent();
+    displayElement(true);
+}, false);
+gemini_btn.addEventListener('click', () => {
+    Gemini.changeContent();
+    displayElement(true);
+}, false);
+
+cancer_btn.addEventListener('click', () => {
+    Cancer.changeContent();
+    displayElement(true);
+}, false);
+
+leo_btn.addEventListener('click', () => {
+    Leo.changeContent();
+    displayElement(true);
+}, false);
+
+virgo_btn.addEventListener('click', () => {
+    Virgo.changeContent();
+    displayElement(true);
+}, false);
+libra_btn.addEventListener('click', () => {
+    Libra.changeContent();
+    displayElement(true);
+}, false);
+
+scorpio_btn.addEventListener('click', () => {
+    Scorpio.changeContent();
+    displayElement(true);
+}, false);
+
+sagittarius_btn.addEventListener('click', () => {
+    Sagittarius.changeContent();
+    displayElement(true);
+}, false);
+
+capicorn_btn.addEventListener('click', () => {
+    Capricorn.changeContent();
+    displayElement(true);
+}, false);
+aquarius_btn.addEventListener('click', () => {
+    Aquarius.changeContent();
+    displayElement(true);
+}, false);
+
+pisces_btn.addEventListener('click', () => {
+    Pisces.changeContent();
+    displayElement(true);
+}, false);
+
+
+// USER DATE INPUT
+const zBtn = document.getElementById('z-btn');
+zBtn.addEventListener('click', () => {
+    const givenZDate = new Date(document.getElementById('user-date').value);
+    const zMonth = givenZDate.getUTCMonth() + 1;
+    const zDay = givenZDate.getUTCDate();
+
+    if ((zMonth == 12 && zDay >= 22) || (zMonth == 1 && zDay <= 19)) {
+        Capricorn.changeContent();
+        displayElement(true);
+    } else if ((zMonth == 11 && zDay >= 22) || (zMonth == 12 && zDay <= 21)) {
+        Sagittarius.changeContent();
+        displayElement(true);
+    } else if ((zMonth == 10 && zDay >= 23) || (zMonth == 11 && zDay <= 21)) {
+        Scorpio.changeContent();
+        displayElement(true);
+    } else if ((zMonth == 9 && zDay >= 23) || (zMonth == 10 && zDay <= 22)) {
+        Libra.changeContent();
+        displayElement(true);
+    } else if ((zMonth == 8 && zDay >= 23) || (zMonth == 9 && zDay <= 22)) {
+        Virgo.changeContent();
+        displayElement(true);
+    } else if ((zMonth == 7 && zDay >= 23) || (zMonth == 8 && zDay <= 22)) {
+        Leo.changeContent();
+        displayElement(true);
+    } else if ((zMonth == 6 && zDay >= 21) || (zMonth == 7 && zDay <= 22)) {
+        Cancer.changeContent();
+        displayElement(true);
+    } else if ((zMonth == 5 && zDay >= 21) || (zMonth == 6 && zDay <= 20)) {
+        Gemini.changeContent();
+        displayElement(true);
+    } else if ((zMonth == 4 && zDay >= 20) || (zMonth == 5 && zDay <= 20)) {
+        Taurus.changeContent();
+        displayElement(true);
+    } else if ((zMonth == 3 && zDay >= 21) || (zMonth == 4 && zDay <= 19)) {
+        Aries.changeContent();
+        displayElement(true);
+    } else if ((zMonth == 2 && zDay >= 19) || (zMonth == 3 && zDay <= 20)) {
+        Pisces.changeContent();
+        displayElement(true);
+    } else if ((zMonth == 1 && zDay >= 20) || (zMonth == 2 && zDay <= 18)) {
+        Aquarius.changeContent();
+        displayElement(true);
+    } else {
+        console.log('invalid input');
+    }
+    console.log(`Users month is: ${zMonth}`);
+    console.log(`Users birth day is: ${zDay}`);
+}, false);
+
+
+/* Help Button interactivity */
+const helpBtn = document.getElementById('helpBtn');
+const closeBtn = document.getElementById('closeBtn');
+const helpInstructions = document.getElementById('visible');
+
+visible.hidden = true;
+closeBtn.addEventListener('click', () => {
+    visible.hidden = !visible.hidden;
+}, false);
+
+helpBtn.addEventListener('click', () => {
+    visible.hidden = false;
+}, false);
+

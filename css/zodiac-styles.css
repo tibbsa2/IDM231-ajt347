@@ -62,13 +62,16 @@ header {
 h1, h2 {
     text-transform: uppercase;
 }
-#z-calculator-title, .zodiac-name, .zodiac-date, .char-music h5 {
+#z-calculator-title, .zodiac-name, .zodiac-date, .char-music, h5 {
     font-weight: 300;
 }
 
 #z-calculator-title {
     font-size: 24px;
     line-height: 10px;
+}
+
+#z-calculator-title, .all-characters {
     letter-spacing: 0.22em;
 }
 
@@ -80,20 +83,39 @@ h1, h2 {
 }
 
 /*SECTION A*/
-.section-a {
-    border: 1px solid var(--star-light);
+
+/*    border: 1px solid var(--star-light);
     border-radius: 10px;
+    min-width: 584px;
+    width: 304px;
+    margin: 0 auto;*/
+main {
     max-width: 1168px;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
+}
+.section-a {
+    border-radius: 10px;;
+    border: 1px solid var(--star-light);
+    display: flex;
+    margin: 0 auto;
+
+}
+
+.remove-init {
+    width: 304px;
+    text-align: center;
+    padding: 7px;
 }
 
 /* displayed content when executed */
 .section-c {
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-around;
+    min-width: 584px;
 }
 .zodiac-image {
     width: 584px;
@@ -110,7 +132,11 @@ h1, h2 {
 
 .zodiac-sign {
     position: relative;
-    bottom: 34px;
+    bottom: 20px;
+}
+#changing-z-sign {
+    width: 90px;
+    height: auto;
 }
 
 .zodiac-name {
@@ -122,6 +148,22 @@ h1, h2 {
     line-height:15.6px;
     letter-spacing: 3.88px;
 }
+
+.u-pop-up {
+    margin-bottom: 10px;
+}
+
+#funny-text {
+    font-style: italic;
+    display: block;
+}
+
+#all-chars {
+    font-weight: bold;
+    text-transform: uppercase;
+    
+}
+
 
 /* CHARACTER DESCRIPTION*/
 
@@ -141,10 +183,11 @@ h1, h2 {
     padding-left: 20px;
 }
 
+
 /* music */
 
 .char-music {
-    font-size: 11px;
+    font-size: 12.5px;
     margin-top: 55px;
 }
 
@@ -164,6 +207,10 @@ a {
 
 }
 
+#user-input {
+    margin: 0 auto;
+}
+
 .birth-date {
     margin: 10px 0;
     height: 33px;
@@ -176,6 +223,7 @@ a {
 .z-button {
     width: 117.5px;
     height: 31.93px;
+    margin: 0 auto 10px;
     margin-bottom: 20px;
     border-radius: 10px;
     color: var(--star-light);
@@ -186,21 +234,78 @@ a {
 }
 
 
-/*SECTION B*/
+/*SECTION B - ALL CHARACTERS */
+
+.section-b {
+    margin-top: 60px;
+}
 .all-characters {
-    border: 1px solid;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
+    text-align: center;
+    font-size: 20px;
+    font-weight:400;
+    margin-bottom: 16px;
 
 }
 
+.wrapper-04 {
+    margin: 0 auto 15%;
+    max-width: 960px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.characters {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border:none;
+}
 .characters img{
-
-    min-width: 139px;
-    max-width: 243.25px;
+    width: 139px;
     height: auto;
-    margin: 1rem;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+
+/* Help Button & Section  */
+
+#visible {
+    padding: 1.25rem 2rem;
+    background-color:  var(--spaced-out);
+    border: 1px solid var(--star-light);
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    width: 40%;
+    text-align: center;
+}
+
+.u-pop-up {
+    height: 31.93px;
+    color: var(--star-light);
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    margin: 0 auto;
+    display: block;
+}
+
+#helpPara {
+    padding: 1rem .25rem;
+}
+.u-pop-up:hover {
+    color: var(--pink-quasar-cta);
+}
+
+
+/* credit to free images*/
+#fine {
+    font-size: 8px;
+    margin: 3rem 50% 0;
+    white-space: nowrap;
+    
 }
 

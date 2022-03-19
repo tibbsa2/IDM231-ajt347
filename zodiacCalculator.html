@@ -22,63 +22,65 @@
     <main>
         <!-- SECTION A - Zodiac User Input & Output-->
         <section class="section-a">
-            <!-- Intro Text, TO DO REMOVE AFTER BUTTON TRIGGER -->
-            <!-- TEMP COMMENT <div>What character are you in the rasauq universe? Enter your birthday to find out.</div> -->
-
-            <!-- TEMP for JS --->
-            <img class="zodiac-image"src="/images/1.png" alt="">
-            <!-- ZODIAC NAME-->
-            <!-- Group Text Content-->
+            <!-- HIDDEN-->
+            <img class="zodiac-image" src="" alt="">
             <section class="section-c">
-                <!-- add in zodiac-class-->
                 <div class=wrapper-01>
+                    <!-- HIDDEN -->
                     <div class="zodiac">
-                        <div class="zodiac-sign">&#9800;</div>
-                        <h3 class="zodiac-name">Aries</h3>
-                        <h4 class="zodiac-date">March 20 - April 19</h4>
-                    </div> 
+                        <div class="zodiac-sign"><img id="changing-z-sign" src=""></div>
+                        <h3 class="zodiac-name"></h3>
+                        <h4 class="zodiac-date"></h4>
+                    </div>
                 </div>
-                <!-- CHARACTER DESCRIPTION-->
                 <div class="wrapper-02">
+                    <!-- HIDDEN-->
                     <div class="character-description">
-                        <!-- hide/make appear class name zodiac in js -->
-                        <h5 class="character-intro">As <span class="exact-character">Selene</span></h5>
-                        <p class="about-character">Aries are known for their confidence and leadership and Selene is no different. She is one of seven primary celestial beings, notorious for her willingness to go to war to resolve disputes. Although stubborn, she is open to innovative solutions. Her savage spirit is best seen through her descendants, the Messor clan. </p>
-                        <p class="char-music">Music - <span class=exact-song-title> <a>“Seizing”</a> (prod. Systematik)</span></p>
-                    </div> 
+                        <h5 class="character-intro">As <span class="exact-character"></span></h5>
+                        <p class="about-character"></p>
+                        <p class="char-music">Music - <span id="exact-song-title"></span></p>
+                    </div>
                 </div>
-    
                 <!-- Group Input into one section -->
                 <div class="wrapper-03">
+                    <!-- TO HIDDEN -->
+                    <p class="remove-init"> What character are you in the rasauq universe? Enter your birthday to find out.</p>
                     <div class="user-interaction">
-                        <form action="" method="post">
-                            <input type="date" class="birth-date">
-                        </form>
-                    <button class="z-button">Show me</button>
-                    <p class="u-pop-up">Help</p>
-                    </div>
+                        <input id="user-date" type="date" class="birth-date" required>
+                        <button id="z-btn" class="z-button">Show me</button>
+                        <!-- CHANGING TEXT-->
+                    <button class="u-pop-up" id="helpBtn">Help</button>
                 </div>
             </section>
         </section>
+
+        <div id="visible">
+            <h3 id="help-me">Help</h3>
+            <p id="helpPara">Determine your by entering a birthdate and clicking the purple button, or click a character card under <span id="all-chars">All Characters</span>. The corresponding zodiac will appear along with fun lore about the rasauq universe. <span id="funny-text">~Enjoy</span></p>
+            <button class="u-pop-up" id="closeBtn">Close</button></div>
+        </div>
         <!-- SECTION B - Zodiac All Character Buttons-->
         <section class="section-b">
             <h2 class=all-characters>All Characters</h2>
-            <div>
-                <button class="characters"><img src="/images/1.png" alt="">Aries</button>
-                <button class="characters"><img src="/images/1.png" alt="">Taurus</button>
-                <button class="characters"><img src="/images/1.png" alt="">Gemini</button>
-                <button class="characters"><img src="/images/1.png" alt="">Cancer</button>
-                <button class="characters"><img src="/images/1.png" alt="">Leo</button>
-                <button class="characters"><img src="/images/1.png" alt="">Virgo</button>
-                <button class="characters"><img src="/images/1.png" alt="">Libra</button>
-                <button class="characters"><img src="/images/1.png" alt="">Scorpio</button>
-                <button class="characters"><img src="/images/1.png" alt="">Sagittarius</button>
-                <button class="characters"><img src="/images/1.png" alt="">Capicorn</button>
-                <button class="characters"><img src="/images/1.png" alt="">Aquarius</button>
-                <button class="characters"><img src="/images/1.png" alt="">Pisces</button>
+            <div class="wrapper-04">
+                <button class="characters" id="aries"><img src="/images/ariesTN.png" alt="">Aries</button>
+                <button class="characters" id="taurus"><img src="/images/taurusSK.png" alt="">Taurus</button>
+                <button class="characters" id="gemini"><img src="/images/geminiSK.png" alt="">Gemini</button>
+                <button class="characters" id="cancer"><img src="/images/cancerTN.png" alt="">Cancer</button>
+                <button class="characters" id="leo"><img src="/images/leoTN.png" alt="">Leo</button>
+                <button class="characters" id="virgo"><img src="/images/virgoTN.png" alt="">Virgo</button>
+                <button class="characters" id="libra"><img src="/images/libraSK.png" alt="">Libra</button>
+                <button class="characters" id="scorpio"><img src="/images/scorpioSK.png" alt="">Scorpio</button>
+                <button class="characters" id="sagittarius"><img src="/images/sagTN.png" alt="">Sagittarius</button>
+                <button class="characters" id="capicorn"><img src="/images/capTN.png" alt="">Capicorn</button>
+                <button class="characters" id="aquarius"><img src="/images/aquariusSK.png" alt="">Aquarius</button>
+                <button class="characters" id="pisces"><img src="/images/1.png" alt="">Pisces</button>
             </div>
         </section>
     </main>
+
+    <a id="fine" href="https://www.vecteezy.com/free-vector/horoscope-icon">Horoscope Icon by Vecteezy</a>
+<audio id="dj"></audio>
 <script src="javascript/zodiac_code"></script>
 </body>
 </html>
